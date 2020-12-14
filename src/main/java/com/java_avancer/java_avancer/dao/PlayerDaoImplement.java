@@ -57,6 +57,14 @@ public class PlayerDaoImplement implements PlayerDao {
 //        counter ++;
 //        return player;
 
+    @Override
+    public Player update(Player player) {
+        Player hero =this.findById(player.getId());
+        hero.setName(player.getName());
+        hero.setType(player.getType());
+
+        return hero;
+    }
 
     @Override
     public Player delete(int id) {
@@ -70,4 +78,5 @@ public class PlayerDaoImplement implements PlayerDao {
         return null;
 
     }
+
 }
